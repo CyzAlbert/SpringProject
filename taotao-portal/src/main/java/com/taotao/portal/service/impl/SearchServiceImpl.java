@@ -14,7 +14,7 @@ import com.taotao.utils.HttpClientUtil;
 @Service
 public class SearchServiceImpl implements SearchService {
 	
-	@Value("SEARCH_BASE_URL")
+	@Value("${SEARCH_BASE_URL}")
 	private  String SEARCH_BASE_URL;
 	
 	@Override
@@ -29,6 +29,7 @@ public class SearchServiceImpl implements SearchService {
 			//调用服务
 			String json = HttpClientUtil.doGet(SEARCH_BASE_URL, param);
 			//把字符串转换成java对象
+			System.out.println(String.format(">>>>>>>>>>>>>>>>>>>>>> %s \n %s",SEARCH_BASE_URL,json));
 			TaotaoResult taotaoResult = TaotaoResult.formatToPojo(json, SearchResult.class);
 			if (taotaoResult.getStatus() == 200) {
 				SearchResult result = (SearchResult) taotaoResult.getData();

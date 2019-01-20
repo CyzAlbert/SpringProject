@@ -5,7 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.tatao.portal.service.ContentService;
+import com.taotao.portal.service.ContentService;
 
 @Controller
 public class IndexController {

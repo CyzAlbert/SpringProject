@@ -27,6 +27,10 @@ public class SearchController {
 			}
 		}
 		SearchResult searchResult = searchService.search(queryString, page);
+		if (searchResult==null) {
+			System.out.println("searchResult is null");
+			return "search";
+		}
 		//向页面传递参数
 		model.addAttribute("query", queryString);
 		model.addAttribute("totalPages", searchResult.getPageCount());

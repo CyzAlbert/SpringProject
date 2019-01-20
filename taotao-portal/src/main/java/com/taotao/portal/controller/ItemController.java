@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.taotao.pojo.TbItem;
+import com.taotao.portal.pojo.Item;
 import com.taotao.portal.service.ItemService;
 
 
@@ -19,7 +19,7 @@ public class ItemController {
 
 	@RequestMapping("/item/{itemId}")
 	public String showItem(@PathVariable Long itemId, Model model) {
-		TbItem item = itemService.getItemById(itemId);
+		Item item = itemService.getItemById(itemId);
 		model.addAttribute("item", item);
 		
 		return "item";

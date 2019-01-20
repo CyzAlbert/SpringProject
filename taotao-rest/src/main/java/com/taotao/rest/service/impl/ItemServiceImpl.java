@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
 
 import com.taotao.common.pojo.TaotaoResult;
 import com.taotao.mapper.TbItemDescMapper;
@@ -20,6 +21,7 @@ import com.taotao.rest.dao.JedisClient;
 import com.taotao.rest.service.ItemService;
 import com.taotao.utils.JsonUtils;
 
+@Service
 public class ItemServiceImpl implements ItemService {
 	
 	@Autowired

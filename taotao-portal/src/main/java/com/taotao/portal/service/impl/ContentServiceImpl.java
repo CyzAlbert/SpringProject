@@ -10,9 +10,9 @@ import org.springframework.stereotype.Service;
 
 import com.taotao.common.pojo.TaotaoResult;
 import com.taotao.pojo.TbContent;
+import com.taotao.portal.service.ContentService;
 import com.taotao.utils.HttpClientUtil;
 import com.taotao.utils.JsonUtils;
-import com.tatao.portal.service.ContentService;
 
 
 @Service

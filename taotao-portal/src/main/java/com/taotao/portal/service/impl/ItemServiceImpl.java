@@ -5,15 +5,17 @@ import java.util.Map;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
 
 import com.taotao.common.pojo.TaotaoResult;
-import com.taotao.pojo.TbItem;
 import com.taotao.pojo.TbItemDesc;
 import com.taotao.pojo.TbItemParamItem;
+import com.taotao.portal.pojo.Item;
 import com.taotao.portal.service.ItemService;
 import com.taotao.utils.HttpClientUtil;
 import com.taotao.utils.JsonUtils;
 
+@Service
 public class ItemServiceImpl implements ItemService {
 	
 	@Value("${REST_BASE_URL}")
@@ -26,15 +28,15 @@ public class ItemServiceImpl implements ItemService {
 	private String ITEM_PARAM_URL;
 
 	@Override
-	public TbItem getItemById(Long itemId) {
+	public Item getItemById(Long itemId) {
 		// TODO Auto-generated method stub
 		try {
 			//调用rest的服务查询商品基本信息
 			String json = HttpClientUtil.doGet(REST_BASE_URL + ITME_INFO_URL + itemId);
 			if (!StringUtils.isBlank(json)) {
-				TaotaoResult taotaoResult = TaotaoResult.formatToPojo(json, TbItem.class);
+				TaotaoResult taotaoResult = TaotaoResult.formatToPojo(json, Item.class);
 				if (taotaoResult.getStatus() == 200) {
-					TbItem item = (TbItem) taotaoResult.getData();
+					Item item = (Item) taotaoResult.getData();
 					return item;
 				}
 			}
