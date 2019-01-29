@@ -1,7 +1,6 @@
 package com.taotao.sso.dao.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import com.taotao.sso.dao.JedisClient;
 

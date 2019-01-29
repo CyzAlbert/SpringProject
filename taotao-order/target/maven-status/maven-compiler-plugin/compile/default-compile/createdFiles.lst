@@ -1,0 +1,2 @@
+com\taotao\order\dao\JedisClient.class
+com\taotao\order\dao\impl\JedisClientSingle.class
